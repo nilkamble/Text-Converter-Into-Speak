@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Voice Converter</title>
+    <style>
+        .textarea{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+       button{
+        position: absolute;
+             top: 50%;
+             left: 50%;
+                transform: translate(-50%, -50%);
+                    padding: 10px;
+                      outline: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    border-radius: 8px;
+                    padding: 13px 23px;
+                    border: 1px solid #222222;
+                    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+                    background: #fff;
+                    color: #222222;
+                    :hover {
+                        border-color: #000000;
+                        background: #f7f7f7;
+                    }}
+                
+    </style>
+</head>
+<body>
+    <div class="textarea">
+        
+        <textarea name="" id="" cols="60" rows="20">welcome to the circus</textarea>
+       
+</div>
+<button>Speak</button>
+    
+    <script>
+        button = document.querySelector("button");
+        text = document.querySelector("textarea");
+
+        button.addEventListener('click',()=>{
+            let utterance = new SpeechSynthesisUtterance(text.value)
+            speechSynthesis.speak(utterance);
+        })
+    </script>
+</body>
+</html>
+
